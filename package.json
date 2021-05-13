@@ -1,0 +1,19 @@
+{
+  "name": "label-flow-app",
+  "version": "1.0.0",
+  "description": "Project for print label and manage data of clients by database",
+  "main": "./src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "electron",
+    "database",
+    "print"
+  ],
+  "author": "Roman Minkin",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^12.0.6"
+  }
+}
