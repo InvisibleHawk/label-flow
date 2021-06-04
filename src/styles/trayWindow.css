@@ -9,7 +9,7 @@ body {
   padding-bottom: 2px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  background: #212121;
+  background: #101010;
   padding-top: 5px;
   color: whitesmoke;
   font-size: 12px;
@@ -34,6 +34,17 @@ body {
   cursor: pointer;
 }
 
+.btn-close:hover {
+  transition: 1s;
+  background: rgb(180, 22, 109);
+  background: linear-gradient(
+    172deg,
+    rgba(232, 7, 7, 1) 100%,
+    rgba(204, 15, 15, 1) 52%,
+    rgba(180, 22, 109, 1) 4%
+  );
+}
+
 h4 {
   margin: 0;
   padding: 0;
@@ -42,13 +53,12 @@ h4 {
 .window {
   border-radius: 10px;
   height: 100vh;
-  background: rgb(153, 155, 255);
+  background: rgb(140, 192, 249);
   background: linear-gradient(
-    172deg,
-    rgba(153, 155, 255, 1) 8%,
-    rgba(171, 226, 255, 1) 100%
+    27deg,
+    rgba(140, 192, 249, 1) 32%,
+    rgba(170, 248, 255, 1) 100%
   );
-
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -57,9 +67,9 @@ input {
   margin: 7% 15%;
   height: 38px;
   width: 70%;
+  border: 0.5px solid #3a68e8;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  border: 0.5px solid #40a4ff;
   box-sizing: border-box;
   background: #353535;
   color: whitesmoke;

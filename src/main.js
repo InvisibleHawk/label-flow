@@ -1,19 +1,46 @@
 const path = require('path')
-const { app, Menu, Tray, BrowserWindow } = require('electron')
+const { app, Menu, Tray, BrowserWindow, ipcMain } = require('electron')
 
 let trayWindow = null
 let tray = null
+let printWindow = null
+
+const winSize = {
+  width: 250,
+  height: 400,
+}
 
 app.on('ready', () => {
   trayWindow = new BrowserWindow({
-    height: 400,
-    width: 250,
+    webPreferences: {
+      nodeIntegration: true,
+      enableRemoteModule: true,
+      contextIsolation: false,
+    },
+    height: winSize.height,
+    width: winSize.width,
     frame: false,
     resizable: false,
     show: false,
     transparent: true,
   })
 
+  printWindow = new BrowserWindow({
+    height: 250,
+    width: 300,
+    frame: false,
+    resizable: false,
+    show: true,
+    webPreferences: {
+      nodeIntegration: true,
+      enableRemoteModule: true,
+      contextIsolation: false,
+    },
+  })
+
+  printWindow.webContents.openDevTools()
+
+  printWindow.webContents.loadFile('src/printWindow/printWindow.html')
   trayWindow.webContents.loadFile('src/trayWindow.html')
 
   const iconName = 'TrayLogo.png'
@@ -24,8 +51,6 @@ app.on('ready', () => {
   tray.on('click', (event, bounds) => {
     const { x, y } = bounds
     const { height, width } = trayWindow.getBounds()
-
-    console.log(bounds.x, bounds.y)
     if (trayWindow.isVisible()) {
       trayWindow.hide()
     } else {
@@ -38,4 +63,9 @@ app.on('ready', () => {
       trayWindow.show()
     }
   })
+})
+
+ipcMain.on('printLabel', (event, data) => {
+  console.log(data)
+  printWindow.webContents.send('printLabel', data)
 })
