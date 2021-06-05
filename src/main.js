@@ -10,6 +10,11 @@ const winSize = {
   height: 400,
 }
 
+const printer_options = {
+  silent: true,
+  deviceName: 'Gprinter  GP-3120TU',
+}
+
 app.on('ready', () => {
   trayWindow = new BrowserWindow({
     webPreferences: {
@@ -66,4 +71,10 @@ app.on('ready', () => {
 ipcMain.on('printLabel', (event, data) => {
   console.log(data)
   printWindow.webContents.send('printLabel', data)
+})
+
+ipcMain.on('sendToPrinter', (event) => {
+  printWindow.webContents.print(printer_options, (success, errorType) => {
+    if (!success) console.log(errorType)
+  })
 })
