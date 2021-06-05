@@ -35,14 +35,7 @@ body {
 }
 
 .btn-close:hover {
-  transition: 1s;
-  background: rgb(180, 22, 109);
-  background: linear-gradient(
-    172deg,
-    rgba(232, 7, 7, 1) 100%,
-    rgba(204, 15, 15, 1) 52%,
-    rgba(180, 22, 109, 1) 4%
-  );
+  background: rgb(219, 11, 11);
 }
 
 h4 {
@@ -119,6 +112,7 @@ button:active {
 
 button:focus {
   outline: none;
+  animation: shadow_btn infinite 1s linear;
 }
 
 .btn {

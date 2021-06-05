@@ -26,8 +26,8 @@ app.on('ready', () => {
   })
 
   printWindow = new BrowserWindow({
-    height: 250,
-    width: 300,
+    height: 130,
+    width: 130,
     frame: false,
     resizable: false,
     show: true,
@@ -37,8 +37,6 @@ app.on('ready', () => {
       contextIsolation: false,
     },
   })
-
-  printWindow.webContents.openDevTools()
 
   printWindow.webContents.loadFile('src/printWindow/printWindow.html')
   trayWindow.webContents.loadFile('src/trayWindow.html')

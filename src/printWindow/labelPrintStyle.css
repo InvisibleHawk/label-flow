@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 10px;
+}
+
+h4 {
+  padding: 0;
+  margin: 0;
+}
+
+.price {
+  float: right;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  overflow-wrap: break-word;
+}

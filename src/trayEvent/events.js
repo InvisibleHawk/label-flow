@@ -11,8 +11,15 @@ const sendToPrintWindow = (data) => {
 
 btnPrint.addEventListener('click', (event) => {
   const client = dataClientArr
-    .map((item) => {
-      return `<p>${item.value}</p><br/>`
+    .map((item, index) => {
+      if (index == 0) return `<h4>&#128100; ${item.value}</h4>`
+      if (index == 1) return `<p>&#128222; ${item.value}</p>`
+      if (index == 2) {
+        if (item.value)
+          return `<div class="price"><p>${item.value}<b>&#8381;</b></p></div>`
+        return `<div class="price" style="width:40%; height:10%;"><p>${item.value}</p></div>`
+      }
+      return `<p>&#128296; ${item.value}</p>`
     })
     .join('')
     .toString()

@@ -1,13 +1,8 @@
 <html>
-  <head></head>
-  <body style="background-color: aqua;">
-    <h2>Something</h2>
-    <script>
-      const { ipcRenderer } = require('electron')
-
-      ipcRenderer.on('printLabel', (event, data) => {
-        document.body.innerHTML = data
-      })
-    </script>
+  <head>
+    <link rel="stylesheet" href="labelPrintStyle.css" />
+  </head>
+  <body>
+    <script src="printWindow.js"></script>
   </body>
 </html>
