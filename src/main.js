@@ -12,8 +12,8 @@ const winSize = {
     height: 400,
   },
   baseWin: {
-    width: 700,
-    height: 580,
+    width: 1200,
+    height: 750,
   },
 }
 
@@ -29,7 +29,7 @@ app.on('ready', () => {
       enableRemoteModule: true,
       contextIsolation: false,
     },
-    height: winTraySize.trayWinSize.height,
+    height: winSize.trayWinSize.height,
     width: winSize.trayWinSize.width,
     frame: false,
     resizable: false,
@@ -43,6 +43,11 @@ app.on('ready', () => {
       enableRemoteModule: true,
       contextIsolation: false,
     },
+    height: winSize.baseWin.height,
+    width: winSize.baseWin.width,
+    frame: false,
+    resizable: false,
+    transparent: true,
   })
 
   printWindow = new BrowserWindow({
@@ -58,6 +63,7 @@ app.on('ready', () => {
     },
   })
 
+  baseWindow.webContents.loadFile('src/baseWindow/baseWindow.html')
   printWindow.webContents.loadFile('src/printWindow/printWindow.html')
   trayWindow.webContents.loadFile('src/trayWindow.html')
 
