@@ -55,8 +55,9 @@ input {
   margin: 7% 15%;
   height: 38px;
   width: 70%;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  /* border-top-left-radius: 5px;
+  border-top-right-radius: 5px; */
+  border-radius: 5px;
   box-sizing: border-box;
   border: 1px solid #323232;
   background: #323232;
@@ -108,7 +109,6 @@ button {
   padding: 10px 60px;
   border-radius: 5px;
   border: 0.3px solid #a7d029;
-
   background: rgba(167, 208, 41, 0.2);
   color: whitesmoke;
   font-size: 15px;
