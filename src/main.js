@@ -4,10 +4,17 @@ const { app, Menu, Tray, BrowserWindow, ipcMain } = require('electron')
 let trayWindow = null
 let tray = null
 let printWindow = null
+let baseWindow = null
 
 const winSize = {
-  width: 250,
-  height: 400,
+  trayWinSize: {
+    width: 250,
+    height: 400,
+  },
+  baseWin: {
+    width: 700,
+    height: 580,
+  },
 }
 
 const printer_options = {
@@ -22,12 +29,20 @@ app.on('ready', () => {
       enableRemoteModule: true,
       contextIsolation: false,
     },
-    height: winSize.height,
-    width: winSize.width,
+    height: winTraySize.trayWinSize.height,
+    width: winSize.trayWinSize.width,
     frame: false,
     resizable: false,
     show: false,
     transparent: true,
+  })
+
+  baseWindow = new BrowserWindow({
+    webPreferences: {
+      nodeIntegration: true,
+      enableRemoteModule: true,
+      contextIsolation: false,
+    },
   })
 
   printWindow = new BrowserWindow({
