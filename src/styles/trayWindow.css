@@ -17,6 +17,7 @@ body {
   color: whitesmoke;
   font-size: 12px;
   padding-left: 45px;
+  text-align: center;
 }
 
 .btn-close {
@@ -35,7 +36,6 @@ body {
 
 .btn-close:hover {
   background: rgba(240, 37, 34, 0.5);
-  padding-left: 1.5px;
 }
 
 h4 {

@@ -54,10 +54,8 @@ body {
 
 .btn-turn:hover {
   background: rgba(64, 164, 255, 0.5);
-  padding-left: 1.5px;
 }
 
 .btn-close:hover {
   background: rgba(240, 37, 34, 0.5);
-  padding-left: 1.5px;
 }
