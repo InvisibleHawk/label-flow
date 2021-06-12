@@ -20,6 +20,25 @@ body {
   text-align: center;
 }
 
+.up {
+  position: absolute;
+}
+
+.up > svg {
+  margin-top: 5px;
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+  fill: #40a4ff;
+  border-radius: 15px;
+
+  transition: 0.5s;
+}
+
+.up > svg:hover {
+  transform: rotate(180deg);
+}
+
 .btn-close {
   border-top-right-radius: 10px;
   color: #ffff;
@@ -29,6 +48,7 @@ body {
   width: 40px;
   padding-top: 5px;
   margin-top: -5px;
+  margin-right: 0.5px;
   text-align: center;
   cursor: pointer;
   transition: 0.2s;
@@ -48,6 +68,13 @@ h4 {
   height: 100vh;
   background: #1f1f1f;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.up {
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
 }
 
 input {
@@ -71,8 +98,8 @@ input:active {
 
 input:focus {
   outline: none;
-  border: 0.3px solid #617039;
-  border-bottom: 4px solid #a7d029;
+  border: 0.3px solid #40a4ff;
+  border-bottom: 4px solid #40a4ff;
 }
 
 input:focus {
@@ -91,7 +118,7 @@ button:active {
 
 button:focus {
   outline: none;
-  background: rgba(167, 208, 41, 0.5);
+  background: rgba(64, 164, 255, 0.3);
   padding: 10px 63px;
 }
 
@@ -108,8 +135,8 @@ button {
   margin-top: 10px;
   padding: 10px 60px;
   border-radius: 5px;
-  border: 0.3px solid #a7d029;
-  background: rgba(167, 208, 41, 0.2);
+  border: 0.3px solid #40a4ff;
+  background: rgba(64, 164, 255, 0.3);
   color: whitesmoke;
   font-size: 15px;
   transition: 0.3s;
@@ -118,6 +145,6 @@ button {
 
 button:hover {
   cursor: pointer;
-  background: rgba(167, 208, 41, 0.5);
+  background: rgba(64, 164, 255, 0.5);
   padding: 10px 63px;
 }

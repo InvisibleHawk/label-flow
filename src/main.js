@@ -48,6 +48,8 @@ app.on('ready', () => {
     frame: false,
     resizable: false,
     transparent: true,
+    show: false,
+    movable: true,
   })
 
   printWindow = new BrowserWindow({
@@ -87,6 +89,11 @@ app.on('ready', () => {
       trayWindow.show()
     }
   })
+})
+
+ipcMain.on('btn-up', (event) => {
+  if (baseWindow.isVisible()) baseWindow.hide()
+  else baseWindow.show()
 })
 
 ipcMain.on('printLabel', (event, data) => {

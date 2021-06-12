@@ -2,6 +2,7 @@ const { ipcRenderer, remote } = require('electron')
 
 const btnPrint = document.querySelector('.print')
 const btnClose = document.querySelector('.btn-close')
+const btnUp = document.querySelector('.up')
 const dataClient = document.getElementsByTagName('input')
 const dataClientArr = [...dataClient]
 
@@ -25,6 +26,10 @@ btnPrint.addEventListener('click', (event) => {
     .toString()
 
   sendToPrintWindow(client)
+})
+
+btnUp.addEventListener('click', () => {
+  ipcRenderer.send('btn-up')
 })
 
 btnClose.addEventListener('click', () => {
