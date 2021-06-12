@@ -15,7 +15,7 @@ body {
 
 .main-nav {
   -webkit-app-region: drag;
-  padding-bottom: 1px;
+  padding-bottom: 4px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background: #101010;
@@ -52,11 +52,53 @@ body {
   margin-left: 30px;
 }
 
-.db-view {
-  margin: 10px auto;
-  width: 90%;
-  height: 92%;
-  border-radius: 10px;
-  border: 0.3px solid #a7d029;
-  background: rgba(167, 208, 41, 0.2);
+.menu-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.call-menu {
+  display: flex;
+  border-radius: 5px;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  font-size: 30px;
+  background: red;
+  height: 50px;
+  width: 50px;
+}
+
+.main-menu {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 40%;
+  width: 30%;
+  /* margin-left: -31px; */
+
+  background: #1f1f1f;
+  border-radius: 5px;
+}
+
+.menu-btn {
+  padding: 0;
+  width: 80%;
+  margin: 10px 0;
+  border-radius: 5px;
+  text-align: center;
+  color: whitesmoke;
+  padding: 10px 5px;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.menu-btn:last-child {
+  margin: 0;
+}
+
+.menu-btn:hover {
+  background: #1f6feb;
 }

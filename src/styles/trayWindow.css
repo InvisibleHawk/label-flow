@@ -29,7 +29,7 @@ body {
   width: 25px;
   height: 25px;
   margin-left: 5px;
-  fill: #40a4ff;
+  fill: #1f6feb;
   border-radius: 15px;
 
   transition: 0.5s;
@@ -98,8 +98,8 @@ input:active {
 
 input:focus {
   outline: none;
-  border: 0.3px solid #40a4ff;
-  border-bottom: 4px solid #40a4ff;
+  border: 0.3px solid #1f6feb;
+  border-bottom: 4px solid #1f6feb;
 }
 
 input:focus {
@@ -135,8 +135,8 @@ button {
   margin-top: 10px;
   padding: 10px 60px;
   border-radius: 5px;
-  border: 0.3px solid #40a4ff;
-  background: rgba(64, 164, 255, 0.3);
+  border: 0.3px solid #1f6feb;
+  background: rgba(31, 111, 235, 0.3);
   color: whitesmoke;
   font-size: 15px;
   transition: 0.3s;
@@ -145,6 +145,6 @@ button {
 
 button:hover {
   cursor: pointer;
-  background: rgba(64, 164, 255, 0.5);
+  background: rgba(31, 111, 235, 0.5);
   padding: 10px 63px;
 }

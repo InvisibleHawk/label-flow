@@ -91,9 +91,8 @@ app.on('ready', () => {
   })
 })
 
-ipcMain.on('btn-up', (event) => {
-  if (baseWindow.isVisible()) baseWindow.hide()
-  else baseWindow.show()
+ipcMain.on('btn-up', () => {
+  baseWindow.show()
 })
 
 ipcMain.on('printLabel', (event, data) => {
