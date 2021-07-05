@@ -1,5 +1,5 @@
 const { database } = require('../database')
-const table = document.querySelector('.divTableBody')
+const table = document.querySelector('.data')
 let state = null
 
 const randomID = () => {
@@ -12,14 +12,14 @@ function fetchItems() {
     .then((items) => {
       console.log(items)
       items.map((item) => {
-        table.innerHTML += `<div class="divTableRow">
-                            <div class="divTableCell">${item.id}</div>
-                            <div class="divTableCell">${item.name}</div>
-                            <div class="divTableCell">${item.problem}</div>
-                            <div class="divTableCell">${item.number}</div>
-                            <div class="divTableCell">${item.date}</div>
-                            <div class="divTableCell">${item.status}</div>
-                            </div>`
+        table.innerHTML += `<tr">
+                            <td>${item.id}</td>
+                            <td>${item.name}</td>
+                            <td>${item.problem}</td>
+                            <td>${item.number}</td>
+                            <td>${item.date}</td>
+                            <td>${item.status}</td>
+                            </tr>`
         console.log(item)
       })
     })
@@ -43,4 +43,6 @@ function deleteItem(item) {
 //   status: 'Готово',
 // })
 
+fetchItems()
+fetchItems()
 fetchItems()
