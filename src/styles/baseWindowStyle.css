@@ -94,37 +94,36 @@ th {
   background: #0c0c0c;
   color: whitesmoke;
   font-size: 16px;
-  border-left: 1px solid #1f6feb;
-  border-right: 1px solid #1f6feb;
-  border-bottom: 1px solid #1f6feb;
+  border-left: 1px solid #323232;
+  border-right: 1px solid #323232;
 }
 
 td {
-  border-left: 1px solid #1f6feb;
-  border-right: 1px solid #1f6feb;
+  border-left: 1px solid #323232;
+  border-right: 1px solid #323232;
   font-size: 12px;
   color: whitesmoke;
   padding: 0 3px 0 3px;
   /* background: #0c0c0c; */
-  border-top: 1px solid #1f6feb;
+  border-top: 1px solid #323232;
 }
 
 td:first-child {
   border-left: 1px solid #0c0c0c;
-  border-right: 1px solid #1f6feb;
+  border-right: 1px solid #323232;
 }
 
 td:last-child {
-  border-left: 1px solid #1f6feb;
+  border-left: 1px solid #323232;
   border-right: 1px solid #0c0c0c;
 }
 
 th:first-child {
   border-left: 1px solid #0c0c0c;
-  border-right: 1px solid #1f6feb;
+  border-right: 1px solid #323232;
 }
 
 th:last-child {
-  border-left: 1px solid #1f6feb;
+  border-left: 1px solid #323232;
   border-right: 1px solid #0c0c0c;
 }
