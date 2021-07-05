@@ -13,7 +13,10 @@ const sendToPrintWindow = (data) => {
 btnPrint.addEventListener('click', (event) => {
   const client = dataClientArr
     .map((item, index) => {
-      if (index == 0) return `<h4>&#128100; ${item.value}</h4>`
+      if (index == 0)
+        return `<h4>&#128100; ${
+          item.value
+        }</h4><p>${new Date().toLocaleDateString()}|${new Date().toLocaleTimeString()}</p>`
       if (index == 1) return `<p>&#128222; ${item.value}</p>`
       if (index == 2) {
         if (item.value)
