@@ -1,48 +1,52 @@
 const { database } = require('../database')
 const table = document.querySelector('.data')
-let state = null
+const testBtn = document.querySelector('button')
+let stateTable = []
 
-const randomID = () => {
-  return Math.floor(Math.random() * 100)
+function viewAllClients(clients) {
+  clients.map((client) => {
+    const row = document.createElement('tr')
+    for (let item in client) {
+      const td = document.createElement('td')
+      td.innerText = `${client[item]}`
+      row.appendChild(td)
+    }
+    table.appendChild(row)
+  })
 }
 
 function fetchItems() {
   database('items')
     .select()
     .then((items) => {
-      console.log(items)
-      items.map((item) => {
-        table.innerHTML += `<tr">
-                            <td>${item.id}</td>
-                            <td>${item.name}</td>
-                            <td>${item.problem}</td>
-                            <td>${item.number}</td>
-                            <td>${item.date}</td>
-                            <td>${item.status}</td>
-                            </tr>`
-        console.log(item)
+      items.map((item, index) => {
+        stateTable.push(item)
       })
+      viewAllClients(stateTable)
     })
     .catch(console.error)
 }
 
 function addItem(item) {
-  database('items').insert(item).then(fetchItems())
+  database('items')
+    .insert(item)
+    .then(() => {
+      stateTable.push(item)
+    })
 }
 
 function deleteItem(item) {
   database('items').where('id', item.id).delete().catch(console.error)
 }
 
-// addItem({
-//   name: 'Роман Минкин',
-//   problem:
-//     'Замена usb-модуля много букв даннных информации и так далее, Замена usb-модуля много букв даннных информации и так далее',
-//   number: '+79143424298',
-//   date: '05.07.2021 19:24',
-//   status: 'Готово',
-// })
+testBtn.addEventListener('click', () => {
+  addItem({
+    name: 'Test User',
+    problem: 'Something wrong',
+    number: '+79000000000',
+    date: '05.07.2021 19:24',
+    status: 'test',
+  })
+})
 
-fetchItems()
-fetchItems()
 fetchItems()

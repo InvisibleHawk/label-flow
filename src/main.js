@@ -69,7 +69,7 @@ app.on('ready', () => {
   printWindow.webContents.loadFile('src/printWindow/printWindow.html')
   trayWindow.webContents.loadFile('src/trayWindow.html')
 
-  // baseWindow.webContents.openDevTools()
+  baseWindow.webContents.openDevTools()
   const iconName = 'TrayLogo.png'
   const iconPath = path.join(__dirname, `./assets/${iconName}`)
   console.log(iconPath)
