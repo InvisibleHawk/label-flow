@@ -9,25 +9,37 @@ const dataClientArr = [...dataClient]
 const sendToPrintWindow = (data) => {
   ipcRenderer.send('printLabel', data)
 }
+const sendToDBView = (data) => {
+  ipcRenderer.send('db_view', data)
+}
 
 btnPrint.addEventListener('click', (event) => {
+  const clientDB = []
   const client = dataClientArr
     .map((item, index) => {
-      if (index == 0)
-        return `<h4>&#128100; ${
-          item.value
-        }</h4><p>${new Date().toLocaleDateString()}|${new Date().toLocaleTimeString()}</p>`
-      if (index == 1) return `<p>&#128222; ${item.value}</p>`
+      if (index == 0) {
+        clientDB.push(item.value)
+        return `<h4>&#128100; ${item.value}
+        </h4><p>${new Date().toLocaleDateString()}|${new Date().toLocaleTimeString()}</p>`
+      }
+      if (index == 1) {
+        clientDB.push(item.value)
+        return `<p>&#128222; ${item.value}</p>`
+      }
       if (index == 2) {
-        if (item.value)
+        if (item.value) {
+          clientDB.push(item.value)
           return `<div class="price"><p>${item.value}<b>&#8381;</b></p></div>`
+        }
+        clientDB.push(item.value)
         return `<div class="price" style="width:40%; height:10%;"><p>${item.value}</p></div>`
       }
+      clientDB.push(item.value)
       return `<p>&#128296; ${item.value}</p>`
     })
     .join('')
     .toString()
-
+  sendToDBView(clientDB)
   sendToPrintWindow(client)
 })
 

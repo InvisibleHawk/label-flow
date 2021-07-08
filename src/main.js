@@ -69,7 +69,8 @@ app.on('ready', () => {
   printWindow.webContents.loadFile('src/printWindow/printWindow.html')
   trayWindow.webContents.loadFile('src/trayWindow.html')
 
-  baseWindow.webContents.openDevTools()
+  // baseWindow.webContents.openDevTools()
+  // trayWindow.webContents.openDevTools()
   const iconName = 'TrayLogo.png'
   const iconPath = path.join(__dirname, `./assets/${iconName}`)
   console.log(iconPath)
@@ -96,8 +97,11 @@ ipcMain.on('btn-up', () => {
   baseWindow.show()
 })
 
+ipcMain.on('db_view', (event, data) => {
+  baseWindow.webContents.send('db_view', data)
+})
+
 ipcMain.on('printLabel', (event, data) => {
-  console.log(data)
   printWindow.webContents.send('printLabel', data)
 })
 

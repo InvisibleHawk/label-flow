@@ -20,6 +20,7 @@
   "dependencies": {
     "electron-rebuild": "^2.3.5",
     "knex": "^0.95.6",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.0.2",
+    "uuid": "^8.3.2"
   }
 }

@@ -7,6 +7,11 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+button {
+  background: lightblue;
+  border-radius: 5px;
+}
+
 .baseWindow {
   height: 99vh;
   border-radius: 10px;
@@ -100,6 +105,9 @@ body {
   border-radius: 10px;
 }
 
+.in-order {
+}
+
 table {
   width: 95%;
   margin: 0 auto;
@@ -133,7 +141,7 @@ td {
   border-right: 1px solid #323232;
   font-size: 12px;
   color: whitesmoke;
-  /* padding: 0 3px 0 3px; */
+  padding: 5px 0 5px 0;
   text-align: center;
   /* background: #0c0c0c; */
   border-top: 1px solid #323232;
