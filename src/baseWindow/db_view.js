@@ -66,6 +66,7 @@ ipcRenderer.on('db_view', (event, data) => {
 
 table.addEventListener('click', () => {
   modal.style.display = 'block'
+ 
 })
 
 window.addEventListener('click', (event) => {
