@@ -19,8 +19,10 @@ btnPrint.addEventListener('click', (event) => {
     .map((item, index) => {
       if (index == 0) {
         clientDB.push(item.value)
-        return `<h4>&#128100; ${item.value}
-        </h4><p>${new Date().toLocaleDateString()}|${new Date().toLocaleTimeString()}</p>`
+        return `<h4>&#128100;${item.value}
+        </h4><p class="date">${new Date().toLocaleDateString()}--${new Date()
+          .toLocaleTimeString()
+          .slice(0, 5)}</p>`
       }
       if (index == 1) {
         clientDB.push(item.value)

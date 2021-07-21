@@ -15,11 +15,12 @@ const winSize = {
     width: 1200,
     height: 750,
   },
+  pageSize: 'A7',
 }
 
 const printer_options = {
   silent: true,
-  deviceName: 'Gprinter  GP-3120TU',
+  deviceName: 'Gprinter GP-3120TU',
 }
 
 app.on('ready', () => {
@@ -53,10 +54,10 @@ app.on('ready', () => {
   })
 
   printWindow = new BrowserWindow({
-    height: 130,
-    width: 130,
+    height: 74,
+    width: 113,
     frame: false,
-    resizable: false,
+    resizable: true,
     show: true,
     webPreferences: {
       nodeIntegration: true,
@@ -69,8 +70,10 @@ app.on('ready', () => {
   printWindow.webContents.loadFile('src/printWindow/printWindow.html')
   trayWindow.webContents.loadFile('src/trayWindow.html')
 
+  // printWindow.webContents.openDevTools()
   // baseWindow.webContents.openDevTools()
   // trayWindow.webContents.openDevTools()
+  console.log(trayWindow.webContents.getPrinters())
   const iconName = 'TrayLogo.png'
   const iconPath = path.join(__dirname, `./assets/${iconName}`)
   console.log(iconPath)

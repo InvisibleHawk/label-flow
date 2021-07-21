@@ -1,7 +1,12 @@
 const { ipcRenderer } = require('electron')
+const label = document.querySelector('.label')
 
 ipcRenderer.on('printLabel', (event, data) => {
-  document.body.innerHTML = data
+  label.innerHTML = data
 
   ipcRenderer.send('sendToPrinter')
 })
+
+
+
+

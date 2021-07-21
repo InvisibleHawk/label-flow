@@ -2,6 +2,7 @@ const { database } = require('../database')
 const { v4: uuidv4 } = require('uuid')
 
 const table = document.querySelector('.data')
+const modal = document.querySelector('.modal-window')
 
 function viewAllClients(clients) {
   clients.map((client) => {
@@ -43,6 +44,10 @@ function addItem(item) {
     })
 }
 
+function updateItem(item) {
+  database('items').where('id', '=', item.id).update({})
+}
+
 function deleteItem(item) {
   database('items').where('id', item.id).delete().catch(console.error)
 }
@@ -57,6 +62,16 @@ ipcRenderer.on('db_view', (event, data) => {
     date: `${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}`,
     status: `В очереди`,
   })
+})
+
+table.addEventListener('click', () => {
+  modal.style.display = 'block'
+})
+
+window.addEventListener('click', (event) => {
+  if (event.target == modal) {
+    modal.style.display = 'none'
+  }
 })
 
 fetchItems()
