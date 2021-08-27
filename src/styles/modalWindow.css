@@ -1,0 +1,38 @@
+hr {
+  background: #474646;
+  border: 0.5 solid #474646;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-window {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  padding-right: 8px;
+  margin-top: 30px;
+  margin-left: 8px;
+  width: 98%;
+  height: 96%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  overflow: auto;
+  transition: 1s;
+}
+
+.modal-animation {
+  transition: 1s;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  color: whitesmoke;
+  background-color: #0c0c0c;
+  border-radius: 10px;
+  margin: 15% auto;
+  padding: 10px;
+  width: 60%;
+}

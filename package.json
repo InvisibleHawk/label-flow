@@ -4,7 +4,9 @@
   "description": "Project for print label and manage data of clients by database",
   "main": "./src/main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package-win": "electron-packager . label-flow-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"LabelFlow\"",
+    "postinstall": "electron-rebuild"
   },
   "keywords": [
     "electron",
@@ -14,6 +16,13 @@
   "author": "Roman Minkin",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^12.0.6"
+    "electron": "^12.0.6",
+    "electron-packager": "^15.2.0"
+  },
+  "dependencies": {
+    "electron-rebuild": "^2.3.5",
+    "knex": "^0.95.6",
+    "sqlite3": "^5.0.2",
+    "uuid": "^8.3.2"
   }
 }

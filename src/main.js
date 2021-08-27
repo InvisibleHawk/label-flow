@@ -4,15 +4,23 @@ const { app, Menu, Tray, BrowserWindow, ipcMain } = require('electron')
 let trayWindow = null
 let tray = null
 let printWindow = null
+let baseWindow = null
 
 const winSize = {
-  width: 250,
-  height: 400,
+  trayWinSize: {
+    width: 250,
+    height: 400,
+  },
+  baseWin: {
+    width: 1200,
+    height: 750,
+  },
+  pageSize: 'A7',
 }
 
 const printer_options = {
   silent: true,
-  deviceName: 'Gprinter  GP-3120TU',
+  deviceName: 'Gprinter GP-3120TU',
 }
 
 app.on('ready', () => {
@@ -22,19 +30,34 @@ app.on('ready', () => {
       enableRemoteModule: true,
       contextIsolation: false,
     },
-    height: winSize.height,
-    width: winSize.width,
+    height: winSize.trayWinSize.height,
+    width: winSize.trayWinSize.width,
     frame: false,
     resizable: false,
     show: false,
     transparent: true,
   })
 
-  printWindow = new BrowserWindow({
-    height: 130,
-    width: 130,
+  baseWindow = new BrowserWindow({
+    webPreferences: {
+      nodeIntegration: true,
+      enableRemoteModule: true,
+      contextIsolation: false,
+    },
+    height: winSize.baseWin.height,
+    width: winSize.baseWin.width,
     frame: false,
     resizable: false,
+    transparent: true,
+    show: false,
+    movable: true,
+  })
+
+  printWindow = new BrowserWindow({
+    height: 74,
+    width: 113,
+    frame: false,
+    resizable: true,
     show: true,
     webPreferences: {
       nodeIntegration: true,
@@ -43,9 +66,14 @@ app.on('ready', () => {
     },
   })
 
+  baseWindow.webContents.loadFile('src/baseWindow/baseWindow.html')
   printWindow.webContents.loadFile('src/printWindow/printWindow.html')
   trayWindow.webContents.loadFile('src/trayWindow.html')
 
+  // printWindow.webContents.openDevTools()
+  // baseWindow.webContents.openDevTools()
+  // trayWindow.webContents.openDevTools()
+  console.log(trayWindow.webContents.getPrinters())
   const iconName = 'TrayLogo.png'
   const iconPath = path.join(__dirname, `./assets/${iconName}`)
   console.log(iconPath)
@@ -68,8 +96,15 @@ app.on('ready', () => {
   })
 })
 
+ipcMain.on('btn-up', () => {
+  baseWindow.show()
+})
+
+ipcMain.on('db_view', (event, data) => {
+  baseWindow.webContents.send('db_view', data)
+})
+
 ipcMain.on('printLabel', (event, data) => {
-  console.log(data)
   printWindow.webContents.send('printLabel', data)
 })
 
