@@ -19,5 +19,5 @@ After entering the data in the tray, it will be transferred to the database and 
 ![real exmaple label](https://github.com/InvisibleHawk/label-flow/blob/main/readme_img/label.jpg)
 
 ## New label design concept
-In next version
+
 ![label design](https://github.com/InvisibleHawk/label-flow/blob/main/readme_img/concept_design.png)
