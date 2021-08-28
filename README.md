@@ -2,7 +2,7 @@
 # LabelFlow (сurrently in development)
 The CRM system for service centries with the possibility of saving client's data and
 distributed printing warranty card, receipt for a product or service (A4 Format Printer) 
-and label printing (e.g. self-adhesive labels 30x20 fomat) 
+and label printing (e.g. self-adhesive labels 30x20 format) 
 
 ## Tech Stack
 * HTML, CSS
